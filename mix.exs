@@ -14,7 +14,8 @@ defmodule Paddy.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      mod: {Paddy.Application, []},
+      extra_applications: [:logger, :tzdata]
     ]
   end
 
@@ -23,6 +24,12 @@ defmodule Paddy.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:ecto, "~> 3.6"},
+      {:ecto_sql, "~> 3.6"},
+      {:oban, "~> 2.7.1"},
+      {:oban_pro, "~> 0.8.1", organization: "oban"},
+      {:postgrex, "~> 0.15"},
+      {:tzdata, "~> 1.1"}
     ]
   end
 end
